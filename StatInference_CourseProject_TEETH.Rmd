@@ -1,0 +1,21 @@
+---
+title: "StatInference_CourseProject_TEETH.Rmd"
+author: "Chompasaurus"
+output: pdf_document
+---
+# Exploratory analysis of ToothGrowth data
+```{r Load and Tidy}
+library(datasets) # load data
+library(dplyr)
+data("ToothGrowth")
+names(ToothGrowth) <- c("Tooth Length", "Supplement", "Dose in milligrams") # Make names coherent 
+
+ToothGrowth$Supplement <- gsub("OJ", "Orange Juice", ToothGrowth$Supplement)
+ToothGrowth$Supplement <- gsub("VC", "Ascorbic Acid", ToothGrowth$Supplement)
+```
+
+```{r Exploratory Plot}
+par(mfrow = c(3,1))
+ToothGrowth_BySupplement <- group_by(ToothGrowth, Supplement)
+```
+

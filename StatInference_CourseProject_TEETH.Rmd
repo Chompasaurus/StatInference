@@ -15,7 +15,7 @@ ToothGrowth$Supplement <- gsub("VC", "Ascorbic Acid", ToothGrowth$Supplement)
 ```
 
 ```{r Exploratory Plot}
-par(mfrow = c(3,1))
+par(mfrow = c(2,1))
 ToothGrowth_BySupplement <- group_by(ToothGrowth, Supplement)
 ```
 
